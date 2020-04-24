@@ -23,4 +23,40 @@ document.onkeyup = function(event) {
         else {
             console.log(userChoice);
         }
+
+    //computer will choose new letter if user loses
+    if (guessRemain <= 0) {
+        document.getElementById("lossCount").innerHTML = lossCount++;
+        console.log("You lost!");
+        alert("You lost!");
+        guessRemain--;
+        guessedLetters = [];
+        document.getElementById("guessedLetters").innerHTML = guessedLetters;
+        document.getElementById("guessRemain").innerHTML = 10;
+        randomLetter = Math.floor(Math.random() * alphabet.length);
+        computerChoice = alphabet[randomLetter];
+        console.log(computerChoice);
+    }
+
+    //compare computer and user choice
+    if (computerChoice === userChoice) {
+        console.log("You win!");
+        alert("You win!");
+        document.getElementById("winCount").innerHTML = winCount++;
+        guessedLetters = [];
+        document.getElementById("guessedLetters").innerHTML = guessedLetters;
+        randomLetter = Math.floor(Math.random() * alphabet.length);
+        computerChoice = alphabet[randomLetter];
+        console.log(computerChoice);
+        guessRemain = 10; 
+        document.getElementById("guessRemain").innerHTML = 10;
+    }
+    else {
+        console.log("Guess again!");
+        document.getElementById(guessRemain).innerHTML = guessRemain--;
+        guessedLetters.push(userChoice);
+        document.getElementById("guessedLetters").innerHTML = guessedLetters;
+    }
+
+    
 }
