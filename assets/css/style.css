@@ -2,4 +2,38 @@
     border-style: dotted;
     border-color: seashell;
     text-align: center;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: 'Anton', sans-serif;
+}
+.header {
+    border-style: groove;
+    border-color: darkgray;
+    border-width: medium;
+    font-family: 'Bangers', cursive;
+    margin: 20px;
+    background-color: azure;
+}
+h1 {
+    text-align: center;
+    color: darkblue;
+}
+h2 {
+    color: bisque;
+}
+.col-md-12 {
+    color: firebrick;
+}
+#winCount {
+    margin: 20px;
+}
+#lossCount {
+    margin: 20px;
+}
+#guessRemain {
+    margin: 20px;
+}
+#guessedLetters {
+    margin: 20px;
 }
