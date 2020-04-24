@@ -26,10 +26,11 @@ document.onkeyup = function(event) {
 
     //computer will choose new letter if user loses
     if (guessRemain <= 0) {
+        lossCount++;
         document.getElementById("lossCount").innerHTML = lossCount++;
         console.log("You lost!");
         alert("You lost!");
-        guessRemain--;
+        guessRemain = 10;
         guessedLetters = [];
         document.getElementById("guessedLetters").innerHTML = guessedLetters;
         document.getElementById("guessRemain").innerHTML = 10;
@@ -40,6 +41,7 @@ document.onkeyup = function(event) {
 
     //compare computer and user choice
     if (computerChoice === userChoice) {
+        winCount++;
         console.log("You win!");
         alert("You win!");
         document.getElementById("winCount").innerHTML = winCount++;
@@ -52,8 +54,9 @@ document.onkeyup = function(event) {
         document.getElementById("guessRemain").innerHTML = 10;
     }
     else {
+        guessRemain--;
         console.log("Guess again!");
-        document.getElementById(guessRemain).innerHTML = guessRemain--;
+        document.getElementById("guessRemain").innerHTML = guessRemain--;
         guessedLetters.push(userChoice);
         document.getElementById("guessedLetters").innerHTML = guessedLetters;
     }
