@@ -40,7 +40,7 @@ document.onkeyup = function(event) {
     }
 
     //compare computer and user choice
-    if (computerChoice === userChoice) {
+    else if (computerChoice === userChoice) {
         winCount++;
         console.log("You win!");
         alert("You win!");
@@ -54,7 +54,6 @@ document.onkeyup = function(event) {
         document.getElementById("guessRemain").innerHTML = 10;
     }
     else {
-        guessRemain--;
         console.log("Guess again!");
         document.getElementById("guessRemain").innerHTML = guessRemain--;
         guessedLetters.push(userChoice);
